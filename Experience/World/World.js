@@ -7,6 +7,7 @@ import Buttons from "./Buttons.js"
 import Controls from "./Controls.js"
 import Environment from "./Environment.js"
 import Animation from "./Animation.js"
+import Puzzle1 from "./Puzzle1.js"
 
 export default class World {
     constructor() {
@@ -23,6 +24,7 @@ export default class World {
             this.buttons = new Buttons(); 
             this.controls = new Controls();
             this.animations = new Animation();
+            this.puzzle1 = new Puzzle1();
         });
 
         

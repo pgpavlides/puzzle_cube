@@ -57,11 +57,35 @@ export default class Raycaster extends EventEmitter {
                 if(this.currentIntersect)
                 this.object = this.currentIntersect.object.name
                 {
-                    // console.log(this.object)
+                    console.log(this.currentIntersect)
                     if(this.object === "pyramid_button") {
                         this.world.animations.firstStep();
                         // console.log("test")
                     }
+
+                    //--------Red Button
+                    if(this.object === "Cube008") {
+                        this.world.puzzle1.p1_Red();
+                        // console.log("test")
+                    }
+                    //--------Green Button
+                    if(this.object === "Cube009") {
+                        this.world.puzzle1.p1_Green();
+                    }
+                    //--------Blue Button
+                    if(this.object === "Cube010") {
+                        this.world.puzzle1.p1_Blue();
+                    }
+                    //--------Yellow Button
+                    if(this.object === "Cube011") {
+                        this.world.puzzle1.p1_Yellow();
+                    }
+
+                    //--------Cross
+                    if(this.object === "puzzle_1_cross") {
+                        this.world.puzzle1.p1_Cross();
+                    }
+
                     
                     
                 }

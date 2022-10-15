@@ -28,7 +28,7 @@ export default class Animation  {
        
         // this.firstStep();
         this.setAnimation();
-       
+    //    this.p1_Red();
        
         
 
@@ -37,9 +37,6 @@ export default class Animation  {
 
 
     firstStep() {
-
-
-        
         // this.mixer = new THREE.AnimationMixer(this.cube.scene);
         this.action = this.mixer.clipAction(this.cube.animations[0]);
         this.action2 = this.mixer.clipAction(this.cube.animations[1]);
@@ -85,6 +82,9 @@ export default class Animation  {
         // this.arm3.play(); 
           
     }
+
+   
+
 
     setAnimation(){
         
