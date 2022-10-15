@@ -1,0 +1,125 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.experience{
+   position: fixed; /* So its not scrolling around and stays on the screen */
+  width: 100vw; /* takes the entire viewport width */
+  height: 100vh; /* takes the entire viewport height */
+}
+
+.experience.canvas{
+  width: 100%;
+  height: 100%; 
+  
+}
+
+.hidden{
+  display: none;
+}
+
+.preloader{
+  /* background-color: rgb(79, 100, 151); */
+  /* position: absolute; */
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  z-index: 999999999;
+
+}
+
+.preloader-wrapper{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 6px;
+  background-color: rgb(23, 24, 26);
+  animation: load 1s ease-in-out infinite;
+}
+
+.circle:nth-child(2){
+  animation-delay: 0.1s;
+}
+.circle:nth-child(3){
+  animation-delay: 0.2s;
+}
+
+@keyframes load {
+  0% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-12px)
+  }
+  40% {
+    transform: translateY(0)
+  }
+}
+
+.introtext {
+  display: flex-end;
+  font-family: 'Pacifico', cursive;
+  color: rgb(10, 10, 10);
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  font-size: 35px;
+  top: 2rem;
+  opacity: 0;
+  user-select:none;
+}
+
+.introtext2 {
+  display: flex-end;
+  /* font-family: 'Arvo', serif; */
+  font-family: 'Silkscreen', cursive;
+  color: rgb(10, 10, 10);
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  font-size: 15px;
+  bottom: 2.5rem;
+  opacity: 0;
+  user-select:none;
+}
+.introtext3 {
+  display: flex-end;
+  /* font-family: 'Arvo', serif; */
+  font-family: 'Silkscreen', cursive;
+  color: rgb(10, 10, 10);
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  font-size: 20px;
+  bottom: 0.5rem;
+  opacity: 0;
+  user-select:none;
+}
+
