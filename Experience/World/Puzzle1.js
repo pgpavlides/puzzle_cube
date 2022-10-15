@@ -13,11 +13,75 @@ export default class Puzzle1  {
         this.time = this.experience.time;
         this.cube = this.experience.resources.items.cube
 
-        this.p1lock = {}
+        this.p1lock = []
+        this.access = false;
 
         this.setAnimation();
+    
        
-    } 
+    }
+    
+    lockCheck(){
+
+        if (this.p1lock.length === 5){
+            if (this.p1lock[0] === 'red' && this.p1lock[1] === 'green' && this.p1lock[2] === 'blue' && this.p1lock[3] === 'yellow' && this.p1lock[4] === 'cross'){
+                this.access = true;
+                console.log("access granted")
+            } else {
+                this.p1_resetAll();
+                this.p1lock.length = 0 
+                console.log("access denied")
+            }
+            console.log(this.p1lock)
+        }
+        
+    }
+
+    p1_resetAll(){
+        
+        GSAP.to(this.cube.scene.children[0].children[6].position,{
+            x: 0,
+            y: 0,
+            z: 0,
+            delay: 0.15,
+            ease: "back.inout(2.5)",
+            duration: 0.5,
+        })
+
+        GSAP.to(this.cube.scene.children[0].children[5].position,{
+            x: 0,
+            y: 0,
+            z: 0,
+            delay: 0.15,
+            ease: "back.inout(2.5)",
+            duration: 0.5,
+        })
+        GSAP.to(this.cube.scene.children[0].children[3].position,{
+            x: 0,
+            y: 0,
+            z: 0,
+            delay: 0.15,
+            ease: "back.inout(2.5)",
+            duration: 0.5,
+        })
+        GSAP.to(this.cube.scene.children[0].children[7].position,{
+            x: 0,
+            y: 0,
+            z: 0,
+            delay: 0.15,
+            ease: "back.inout(2.5)",
+            duration: 0.5,
+            
+        })
+        GSAP.to(this.cube.scene.children[0].children[4].position,{
+            x: 0,
+            y: 0,
+            z: 0,
+            delay: 0.15,
+            ease: "back.inout(2.5)",
+            duration: 0.5,
+        })
+    }
 
     p1_Red(){
         GSAP.to(this.cube.scene.children[0].children[6].position,{
@@ -28,7 +92,9 @@ export default class Puzzle1  {
             ease: "back.inout(2.5)",
             duration: 0.5,
         })
-        console.log(this.cube.scene.children[0]);
+        this.p1lock.push("red")
+        // console.log(this.p1lock)
+        // console.log(this.cube.scene.children[0]);
         // this.cube.scene.children[0].children[6].scale.set(2,2,2)
     }
     
@@ -41,7 +107,10 @@ export default class Puzzle1  {
             ease: "back.inout(2.5)",
             duration: 0.5,
         })
-        console.log(this.cube.scene.children[0]);
+        this.p1lock.push("green")
+        // console.log(this.p1lock)
+
+        // console.log(this.cube.scene.children[0]);
     }
     
     p1_Blue(){
@@ -53,7 +122,10 @@ export default class Puzzle1  {
             ease: "back.inout(2.5)",
             duration: 0.5,
         })
-        console.log(this.cube.scene.children[0]);
+        this.p1lock.push("blue")
+        // console.log(this.p1lock)
+
+        // console.log(this.cube.scene.children[0]);
     }
     
     p1_Yellow(){
@@ -64,8 +136,12 @@ export default class Puzzle1  {
             // delay: 0.5,
             ease: "back.inout(2.5)",
             duration: 0.5,
+            
         })
-        console.log(this.cube.scene.children[0]);
+        this.p1lock.push("yellow")
+        console.log(this.p1lock)
+
+        // console.log(this.cube.scene.children[0]);
     }
     p1_Cross(){
         GSAP.to(this.cube.scene.children[0].children[4].position,{
@@ -76,7 +152,10 @@ export default class Puzzle1  {
             ease: "back.inout(2.5)",
             duration: 0.5,
         })
-        console.log(this.cube.scene.children[0]);
+        this.p1lock.push("cross")
+        // console.log(this.p1lock)
+
+        // console.log(this.cube.scene.children[0]);
     }
 
 
@@ -90,6 +169,14 @@ export default class Puzzle1  {
     
 
     update(){
+        console.log(this.p1lock)
+        // console.log(this.p1lock.length)
+        // console.log(this.access)
+        
+         //else if (this.p1lock.length > 5) {
+        //     // this.p1lock.length = 0;
+        // }
+        
         
     }
 } 

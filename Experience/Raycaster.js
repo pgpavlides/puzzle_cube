@@ -66,24 +66,33 @@ export default class Raycaster extends EventEmitter {
                     //--------Red Button
                     if(this.object === "Cube008") {
                         this.world.puzzle1.p1_Red();
+                        this.world.puzzle1.lockCheck();
                         // console.log("test")
                     }
                     //--------Green Button
                     if(this.object === "Cube009") {
                         this.world.puzzle1.p1_Green();
+                        this.world.puzzle1.lockCheck();
+
                     }
                     //--------Blue Button
                     if(this.object === "Cube010") {
                         this.world.puzzle1.p1_Blue();
+                        this.world.puzzle1.lockCheck();
+
                     }
                     //--------Yellow Button
                     if(this.object === "Cube011") {
                         this.world.puzzle1.p1_Yellow();
+                        this.world.puzzle1.lockCheck();
+
                     }
 
                     //--------Cross
                     if(this.object === "puzzle_1_cross") {
                         this.world.puzzle1.p1_Cross();
+                        this.world.puzzle1.lockCheck();
+
                     }
 
                     

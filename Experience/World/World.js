@@ -45,6 +45,9 @@ export default class World {
         if (this.animations) {
             this.animations.update();
         }
+        if (this.puzzle1) {
+            this.puzzle1.update();
+        }
     }
 
 }
