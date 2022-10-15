@@ -92,6 +92,7 @@ export default class Raycaster extends EventEmitter {
                     if(this.object === "puzzle_1_cross") {
                         this.world.puzzle1.p1_Cross();
                         this.world.puzzle1.lockCheck();
+                        
 
                     }
 

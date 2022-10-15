@@ -26,10 +26,14 @@ export default class Puzzle1  {
         if (this.p1lock.length === 5){
             if (this.p1lock[0] === 'red' && this.p1lock[1] === 'green' && this.p1lock[2] === 'blue' && this.p1lock[3] === 'yellow' && this.p1lock[4] === 'cross'){
                 this.access = true;
+                this.experience.audioplayer.stopAudio();
+                this.resources.items.success.play(); 
                 console.log("access granted")
             } else {
                 this.p1_resetAll();
                 this.p1lock.length = 0 
+                this.experience.audioplayer.stopAudio();
+                this.resources.items.error.play(); 
                 console.log("access denied")
             }
             console.log(this.p1lock)
@@ -90,7 +94,10 @@ export default class Puzzle1  {
             z: 0,
             // delay: 0.5,
             ease: "back.inout(2.5)",
-            duration: 0.5,
+            duration: 0.25,
+            onComplete: () =>  {
+                 this.resources.items.button_1.play();              
+            } 
         })
         this.p1lock.push("red")
         // console.log(this.p1lock)
@@ -105,7 +112,10 @@ export default class Puzzle1  {
             z: 0,
             // delay: 0.5,
             ease: "back.inout(2.5)",
-            duration: 0.5,
+            duration: 0.25,
+            onComplete: () =>  {
+                this.resources.items.button_2.play();              
+           }
         })
         this.p1lock.push("green")
         // console.log(this.p1lock)
@@ -120,7 +130,10 @@ export default class Puzzle1  {
             z: 0,
             // delay: 0.5,
             ease: "back.inout(2.5)",
-            duration: 0.5,
+            duration: 0.25,
+            onComplete: () =>  {
+                this.resources.items.button_1.play();              
+           }
         })
         this.p1lock.push("blue")
         // console.log(this.p1lock)
@@ -135,7 +148,10 @@ export default class Puzzle1  {
             z: 0,
             // delay: 0.5,
             ease: "back.inout(2.5)",
-            duration: 0.5,
+            duration: 0.25,
+            onComplete: () =>  {
+                this.resources.items.button_3.play();              
+           }
             
         })
         this.p1lock.push("yellow")
@@ -150,7 +166,10 @@ export default class Puzzle1  {
             z: 0,
             // delay: 0.5,
             ease: "back.inout(2.5)",
-            duration: 0.5,
+            duration: 0.25,
+            onComplete: () =>  {
+                this.resources.items.button_2.play();              
+           }
         })
         this.p1lock.push("cross")
         // console.log(this.p1lock)
@@ -169,7 +188,8 @@ export default class Puzzle1  {
     
 
     update(){
-        console.log(this.p1lock)
+        
+        // console.log(this.access)
         // console.log(this.p1lock.length)
         // console.log(this.access)
         
