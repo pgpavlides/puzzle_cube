@@ -60,7 +60,7 @@ export default class Raycaster extends EventEmitter {
                     // console.log(this.object)
                     if(this.object === "pyramid_button") {
                         this.world.animations.firstStep();
-                        
+                        // console.log("test")
                     }
                     
                     

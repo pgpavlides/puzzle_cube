@@ -6,19 +6,18 @@ import GSAP from "gsap"
 
 export default class Audioplayer extends EventEmitter {
     constructor() {
-        super();
         
+        super();       
         this.experience = new Experience();
-          
         this.resources = this.experience.resources;       
 
     } 
 
     startAudio() {
         
-        this.stop = document.querySelector("audio")
-        this.stop.currentTime = 0;
-        this.stop.play()
+        // this.stop = document.querySelector("audio")
+        // this.stop.currentTime = 0;
+        // this.stop.play()
         
         // Object.keys(this.resources.items).forEach(key => {
         //     // this.resources.items[key].play();

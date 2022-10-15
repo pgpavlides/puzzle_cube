@@ -38,9 +38,9 @@ export default class Animation  {
 
     firstStep() {
 
+
         
-        
-        this.mixer = new THREE.AnimationMixer(this.cube.scene);
+        // this.mixer = new THREE.AnimationMixer(this.cube.scene);
         this.action = this.mixer.clipAction(this.cube.animations[0]);
         this.action2 = this.mixer.clipAction(this.cube.animations[1]);
         this.action3 = this.mixer.clipAction(this.cube.animations[2]);
