@@ -23,6 +23,12 @@ export default class Puzzle2 extends EventEmitter   {
 
         this.puzzle1.on("puzzle1complete", ()=>{
             this.openSesame();
+            setTimeout(() => {
+                
+                this.resources.items.loading.play(); 
+                
+               }, 1700);
+            
             // console.log("PAME LIGOOOOOO")
 
         });
@@ -74,7 +80,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_door2" && this.accessp2 === false){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -89,7 +95,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone0"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -103,7 +109,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone1"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -117,7 +123,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone2"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -131,7 +137,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone3"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -145,7 +151,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone4"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -159,7 +165,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone5"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -173,7 +179,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone6"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -187,7 +193,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone7"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -201,7 +207,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone8"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -215,7 +221,7 @@ export default class Puzzle2 extends EventEmitter   {
             if (e.name === "puzzle2_phone9"){
                 // this.resources.items.button_1.currentTime = 0;
                 
-                    this.resources.items.loading.play();                               
+                    // this.resources.items.loading.play();                               
                     this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -491,9 +497,9 @@ p2_closeDoor(){
                 x: 0,
                 y: 0,
                 z: 0,
-                delay: 0.15,                 
+                delay: 1.0,                 
                 ease: "expo.easeOut",                   
-                duration: 0.9,                     
+                duration: 1.4,                     
             }) 
         }
         if (e.name === "puzzle2_door2"){                               
