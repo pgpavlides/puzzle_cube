@@ -117,8 +117,8 @@ export default class Puzzle1 extends EventEmitter  {
 
             // console.log(e)
             if (e.name === "puzzle_1_red_b"){
-                this.resources.items.button_1.currentTime = 0;
-                this.resources.items.button_1.play();                               
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
                 GSAP.to(e.position, {
                     x: -0.03,
                     y: 0,
@@ -136,8 +136,8 @@ export default class Puzzle1 extends EventEmitter  {
 
             // console.log(e)
             if (e.name === "puzzle_1_green_b"){
-                this.resources.items.button_3.currentTime = 0;
-                this.resources.items.button_3.play();                               
+                this.resources.items.button_1.currentTime = 0;
+                this.resources.items.button_1.play();                               
                 GSAP.to(e.position, {
                     x: -0.03,
                     y: 0,
@@ -192,8 +192,8 @@ export default class Puzzle1 extends EventEmitter  {
 
             // console.log(e)
             if (e.name === "puzzle_1_cross"){
-                this.resources.items.button_1.currentTime = 0;
-                this.resources.items.button_1.play();                               
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
                 GSAP.to(e.position, {
                     x: -0.03,
                     y: 0,
