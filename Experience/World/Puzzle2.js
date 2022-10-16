@@ -38,20 +38,16 @@ export default class Puzzle2 extends EventEmitter   {
 
     lockCheck(){
 
-        if (this.p2lock.length === 9){
+        if (this.p2lock.length === 3){
             if (this.p2lock[0] === 3 
                 && this.p2lock[1] === 1 
-                && this.p2lock[2] === 4 
-                && this.p2lock[3] === 1 
-                && this.p2lock[4] === 5 
-                && this.p2lock[5] === 9
-                && this.p2lock[6] === 2
-                && this.p2lock[7] === 6
-                && this.p2lock[8] === 5 ){
+                && this.p2lock[2] === 4  ){
                 
                 setTimeout(() => {
                     this.accessp2 = true;
                     this.resources.items.success.play(); 
+                    this.p2_closeDoor();
+
                     // console.log("access granted")
                     this.emit("puzzle2complete")
                    }, 1000);
@@ -59,11 +55,10 @@ export default class Puzzle2 extends EventEmitter   {
             } else {
 
                 setTimeout(() => {
-                    // this.p1_resetAll();
                     this.p2lock.length = 0 
                     this.resources.items.error.play(); 
                     // console.log("access denied")
-                   }, 500);
+                   }, 250);
                 
             }
             // console.log(this.p1lock)
@@ -262,14 +257,14 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: -0.03,                 
                     ease: "back.inout(2.5)",               
-                    duration: 0.25,                     
+                    duration: 0.1,                     
                 }) 
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
                     z: 0.050,                 
                     ease: "back.inout(2.5)",               
-                    duration: 0.25,
+                    duration: 0.1,
                     // onComplete:                     
                 })                
             }                                                                
@@ -485,62 +480,134 @@ export default class Puzzle2 extends EventEmitter   {
           this.p2lock.push(9)           
     }
 
-p2_resetAll(){
-        
-    // this.object.children.forEach((e) => {
 
-    //     // console.log(e)
-    //     if (e.name === "puzzle_1_red_b"){                               
-    //         GSAP.to(e.position, {
-    //             x: 0,
-    //             y: 0,
-    //             z: 0,
-    //             delay: 0.15,                 
-    //             ease: "expo.easeOut",                   
-    //             duration: 0.9,                     
-    //         }) 
-    //     } 
-    //     if (e.name === "puzzle_1_green_b"){                               
-    //         GSAP.to(e.position, {
-    //             x: 0,
-    //             y: 0,
-    //             z: 0,
-    //             delay: 0.15,                 
-    //             ease: "expo.easeOut",                   
-    //             duration: 0.9,                     
-    //         }) 
-    //     }
-    //     if (e.name === "puzzle_1_blue_b"){                               
-    //         GSAP.to(e.position, {
-    //             x: 0,
-    //             y: 0,
-    //             z: 0,
-    //             delay: 0.15,                 
-    //             ease: "expo.easeOut",                   
-    //             duration: 0.9,                     
-    //         }) 
-    //     }
-    //     if (e.name === "puzzle_1_yellow_b"){                               
-    //         GSAP.to(e.position, {
-    //             x: 0,
-    //             y: 0,
-    //             z: 0,
-    //             delay: 0.15,                 
-    //             ease: "expo.easeOut",                   
-    //             duration: 0.9,                     
-    //         }) 
-    //     } 
-    //     if (e.name === "puzzle_1_cross"){                               
-    //         GSAP.to(e.position, {
-    //             x: 0,
-    //             y: 0,
-    //             z: 0,
-    //             delay: 0.15,                 
-    //             ease: "expo.easeOut",                   
-    //             duration: 0.9,                     
-    //         }) 
-    //     }            
-    //   })     
+p2_closeDoor(){
+        
+    this.object.children.forEach((e) => {
+
+        console.log(e)
+        if (e.name === "puzzle2_door"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: 0,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 0.9,                     
+            }) 
+        }
+        if (e.name === "puzzle2_door2"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
+        if (e.name === "puzzle2_phone0"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
+        if (e.name === "puzzle2_phone1"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        } 
+        if (e.name === "puzzle2_phone2"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }  
+        if (e.name === "puzzle2_phone3"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
+        if (e.name === "puzzle2_phone4"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
+        if (e.name === "puzzle2_phone5"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
+        if (e.name === "puzzle2_phone6"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        } 
+        if (e.name === "puzzle2_phone7"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }  
+        if (e.name === "puzzle2_phone8"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        } 
+        if (e.name === "puzzle2_phone9"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }     
+      }) 
+          
 }
 
             
@@ -548,7 +615,7 @@ p2_resetAll(){
 
     update(){
         
-        console.log(this.p2lock)
+        // console.log(this.p2lock)
         // console.log(this.access)
         // console.log(this.p1lock.length)
         // console.log(this.access)
