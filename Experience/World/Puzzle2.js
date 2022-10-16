@@ -43,14 +43,17 @@ export default class Puzzle2 extends EventEmitter   {
             // console.log(e)
             if (e.name === "puzzle2_door"){
                 // this.resources.items.button_1.currentTime = 0;
-                this.resources.items.loading.play();                               
-                GSAP.to(e.position, {
+                setTimeout(() => {
+                    this.resources.items.loading.play();                               
+                    GSAP.to(e.position, {
                     x: 0,
                     y: 0,
-                    z: -1.3,                 
+                    z: -1.9,                 
                     ease: "sine(2.5)",               
                     duration: 4,                     
-                }) 
+                })
+              }, 1900);
+                 
             }                                                                
           })
 
