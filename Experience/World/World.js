@@ -9,6 +9,7 @@ import Environment from "./Environment.js"
 import Animation from "./Animation.js"
 import Puzzle1 from "./Puzzle1.js"
 import Puzzle2 from "./Puzzle2.js"
+import Puzzle3 from "./Puzzle3.js"
 
 export default class World {
     constructor() {
@@ -27,6 +28,7 @@ export default class World {
             this.animations = new Animation();
             this.puzzle1 = new Puzzle1();
             this.puzzle2 = new Puzzle2();
+            this.puzzle3 = new Puzzle3();
         });
 
         
@@ -52,6 +54,9 @@ export default class World {
         }
         if (this.puzzle2) {
             this.puzzle2.update();
+        }
+        if (this.puzzle3) {
+            this.puzzle3.update();
         }
     }
 

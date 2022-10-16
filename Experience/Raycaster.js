@@ -147,6 +147,51 @@ export default class Raycaster extends EventEmitter {
                         this.world.puzzle2.p2_p1();
                         this.world.puzzle2.lockCheck();                        
                     }
+                    //--------Puzzle_3_b1
+                    if(this.object === "puzzle3_b1a") {
+                        this.world.puzzle3.p3_p1();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b2
+                    if(this.object === "puzzle3_b2a") {
+                        this.world.puzzle3.p3_p2();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b3
+                    if(this.object === "puzzle3_b3a") {
+                        this.world.puzzle3.p3_p3();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b4
+                    if(this.object === "puzzle3_b4a") {
+                        this.world.puzzle3.p3_p4();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b4
+                    if(this.object === "puzzle3_b5a") {
+                        this.world.puzzle3.p3_p5();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b4
+                    if(this.object === "puzzle3_b6a") {
+                        this.world.puzzle3.p3_p6();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b7
+                    if(this.object === "puzzle3_b7a") {
+                        this.world.puzzle3.p3_p7();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b8
+                    if(this.object === "puzzle3_b8a") {
+                        this.world.puzzle3.p3_p8();
+                        this.world.puzzle3.lockCheck();  
+                    }
+                    //--------Puzzle_3_b9
+                    if(this.object === "puzzle3_b9a") {
+                        this.world.puzzle3.p3_p9();
+                        this.world.puzzle3.lockCheck();  
+                    }
 
                     
                     

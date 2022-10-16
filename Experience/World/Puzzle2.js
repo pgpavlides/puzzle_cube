@@ -491,7 +491,7 @@ p2_closeDoor(){
         
     this.object.children.forEach((e) => {
 
-        console.log(e)
+        // console.log(e)
         if (e.name === "puzzle2_door"){                               
             GSAP.to(e.position, {
                 x: 0,
