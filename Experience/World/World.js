@@ -50,6 +50,9 @@ export default class World {
         if (this.puzzle1) {
             this.puzzle1.update();
         }
+        if (this.puzzle2) {
+            this.puzzle2.update();
+        }
     }
 
 }

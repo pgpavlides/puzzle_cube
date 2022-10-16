@@ -55,6 +55,7 @@ export default class Raycaster extends EventEmitter {
                 
     
                 if(this.currentIntersect)
+                // console.log(this.currentIntersect)
                 this.object = this.currentIntersect.object.name
                 {
                     // console.log(this.currentIntersect)
@@ -94,6 +95,57 @@ export default class Raycaster extends EventEmitter {
                         this.world.puzzle1.lockCheck();
                         
 
+                    }
+
+                    //--------Phone 0
+                    if(this.object === "Cube022_1") {
+                        this.world.puzzle2.p2_p0();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 9
+                    if(this.object === "Cube021_1") {
+                        this.world.puzzle2.p2_p9();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 8
+                    if(this.object === "Cube020_1") {
+                        this.world.puzzle2.p2_p8();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 7
+                    if(this.object === "Cube019_1") {
+                        this.world.puzzle2.p2_p7();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 6
+                    if(this.object === "Cube018_1") {
+                        this.world.puzzle2.p2_p6();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 5
+                    if(this.object === "Cube017_1") {
+                        this.world.puzzle2.p2_p5();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 4
+                    if(this.object === "Cube016_1") {
+                        this.world.puzzle2.p2_p4();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 3
+                    if(this.object === "Cube015_1") {
+                        this.world.puzzle2.p2_p3();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 2
+                    if(this.object === "Cube014_1") {
+                        this.world.puzzle2.p2_p2();
+                        this.world.puzzle2.lockCheck();                        
+                    }
+                    //--------Phone 1
+                    if(this.object === "Cube013_1") {
+                        this.world.puzzle2.p2_p1();
+                        this.world.puzzle2.lockCheck();                        
                     }
 
                     

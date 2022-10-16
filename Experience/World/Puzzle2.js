@@ -16,24 +16,59 @@ export default class Puzzle2 extends EventEmitter   {
         this.cube = this.experience.resources.items.cube;
         this.puzzle1 = this.experience.world.puzzle1;
 
-        this.p1lock = []
+        this.p2lock = []
         this.accessp2 = false;
 
         this.object = this.cube.scene.children[0];
 
         this.puzzle1.on("puzzle1complete", ()=>{
             this.openSesame();
-            console.log("PAME LIGOOOOOO")
+            // console.log("PAME LIGOOOOOO")
 
         });
         
-
+        this.timeline = new GSAP.timeline();
 
 
         // if(this.experience.world.puzzle1.accessp1 === true) {
         // }
-        console.log(this.object)
+        // console.log(this.object)
        
+    }
+
+    lockCheck(){
+
+        if (this.p2lock.length === 9){
+            if (this.p2lock[0] === 3 
+                && this.p2lock[1] === 1 
+                && this.p2lock[2] === 4 
+                && this.p2lock[3] === 1 
+                && this.p2lock[4] === 5 
+                && this.p2lock[5] === 9
+                && this.p2lock[6] === 2
+                && this.p2lock[7] === 6
+                && this.p2lock[8] === 5 ){
+                
+                setTimeout(() => {
+                    this.accessp2 = true;
+                    this.resources.items.success.play(); 
+                    // console.log("access granted")
+                    this.emit("puzzle2complete")
+                   }, 1000);
+                
+            } else {
+
+                setTimeout(() => {
+                    // this.p1_resetAll();
+                    this.p2lock.length = 0 
+                    this.resources.items.error.play(); 
+                    // console.log("access denied")
+                   }, 500);
+                
+            }
+            // console.log(this.p1lock)
+        }
+        
     }
 
     openSesame(){
@@ -41,29 +76,479 @@ export default class Puzzle2 extends EventEmitter   {
         this.object.children.forEach((e) => {
 
             // console.log(e)
-            if (e.name === "puzzle2_door"){
+            if (e.name === "puzzle2_door2" && this.accessp2 === false){
                 // this.resources.items.button_1.currentTime = 0;
-                setTimeout(() => {
+                
                     this.resources.items.loading.play();                               
-                    GSAP.to(e.position, {
+                    this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
-                    z: -1.9,                 
+                    z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 4,                     
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+
+            if (e.name === "puzzle2_phone0"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone1"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone2"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone3"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone4"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone5"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone6"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            } 
+            if (e.name === "puzzle2_phone7"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone8"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_phone9"){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.90,                     
+                
+              },"same");
+                               
+            }           
+            if (e.name === "puzzle2_door" && this.accessp2 === false){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    // this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.5,     
+                    // delay: 4,            
+                    ease: "sine(2.5)",               
+                    duration: 1.5,                     
                 })
-              }, 1900);
-                 
-            }                                                                
+                              
+            }                                                                 
           })
 
-    }   
+          
+          
+
+    }  
+
+    p2_p0(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone0" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.25,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.25,
+                    // onComplete:                     
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(0)           
+    } 
+
+    p2_p1(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone1" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(1)           
+    }  
+    p2_p2(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone2" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(2)           
+    }
+    p2_p3(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone3" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(3)           
+    }
+    p2_p4(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone4" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(4)           
+    }
+    p2_p5(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone5" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(5)           
+    }
+    p2_p6(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone6" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(6)           
+    }
+    p2_p7(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone7" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(7)           
+    }
+    p2_p8(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone8" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(8)           
+    }
+    p2_p9(){
+        this.object.children.forEach((e) => {
+            if (e.name === "puzzle2_phone9" && this.accessp2 === false){
+                this.resources.items.button_2.currentTime = 0;
+                this.resources.items.button_2.play();                               
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -0.03,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                     
+                }) 
+                this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: 0.050,                 
+                    ease: "back.inout(2.5)",               
+                    duration: 0.1,                                        
+                })                
+            }                                                                
+          }) 
+          this.p2lock.push(9)           
+    }
+
+p2_resetAll(){
+        
+    // this.object.children.forEach((e) => {
+
+    //     // console.log(e)
+    //     if (e.name === "puzzle_1_red_b"){                               
+    //         GSAP.to(e.position, {
+    //             x: 0,
+    //             y: 0,
+    //             z: 0,
+    //             delay: 0.15,                 
+    //             ease: "expo.easeOut",                   
+    //             duration: 0.9,                     
+    //         }) 
+    //     } 
+    //     if (e.name === "puzzle_1_green_b"){                               
+    //         GSAP.to(e.position, {
+    //             x: 0,
+    //             y: 0,
+    //             z: 0,
+    //             delay: 0.15,                 
+    //             ease: "expo.easeOut",                   
+    //             duration: 0.9,                     
+    //         }) 
+    //     }
+    //     if (e.name === "puzzle_1_blue_b"){                               
+    //         GSAP.to(e.position, {
+    //             x: 0,
+    //             y: 0,
+    //             z: 0,
+    //             delay: 0.15,                 
+    //             ease: "expo.easeOut",                   
+    //             duration: 0.9,                     
+    //         }) 
+    //     }
+    //     if (e.name === "puzzle_1_yellow_b"){                               
+    //         GSAP.to(e.position, {
+    //             x: 0,
+    //             y: 0,
+    //             z: 0,
+    //             delay: 0.15,                 
+    //             ease: "expo.easeOut",                   
+    //             duration: 0.9,                     
+    //         }) 
+    //     } 
+    //     if (e.name === "puzzle_1_cross"){                               
+    //         GSAP.to(e.position, {
+    //             x: 0,
+    //             y: 0,
+    //             z: 0,
+    //             delay: 0.15,                 
+    //             ease: "expo.easeOut",                   
+    //             duration: 0.9,                     
+    //         }) 
+    //     }            
+    //   })     
+}
 
             
     
 
     update(){
         
+        console.log(this.p2lock)
         // console.log(this.access)
         // console.log(this.p1lock.length)
         // console.log(this.access)

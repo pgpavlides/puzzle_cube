@@ -127,10 +127,7 @@ export default class Puzzle1 extends EventEmitter  {
                     }) 
                 }                                                                
               })
-              this.p1lock.push("red")    
-        
-
-            
+              this.p1lock.push("red")                
     }
     
     p1_Green(){
