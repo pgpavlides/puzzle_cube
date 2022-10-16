@@ -256,8 +256,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p0(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone0" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_3_s.currentTime = 0;
+                this.resources.items.button_3_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -281,8 +281,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p1(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone1" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_1_s.currentTime = 0;
+                this.resources.items.button_1_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -304,8 +304,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p2(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone2" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_2_s.currentTime = 0;
+                this.resources.items.button_2_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -327,8 +327,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p3(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone3" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_3_s.currentTime = 0;
+                this.resources.items.button_3_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -350,8 +350,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p4(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone4" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_2_s.currentTime = 0;
+                this.resources.items.button_2_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -373,8 +373,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p5(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone5" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_3_s.currentTime = 0;
+                this.resources.items.button_3_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -396,8 +396,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p6(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone6" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_1_s.currentTime = 0;
+                this.resources.items.button_1_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -419,8 +419,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p7(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone7" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_2_s.currentTime = 0;
+                this.resources.items.button_2_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -442,8 +442,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p8(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone8" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_3_s.currentTime = 0;
+                this.resources.items.button_3_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,
@@ -465,8 +465,8 @@ export default class Puzzle2 extends EventEmitter   {
     p2_p9(){
         this.object.children.forEach((e) => {
             if (e.name === "puzzle2_phone9" && this.accessp2 === false){
-                this.resources.items.button_2.currentTime = 0;
-                this.resources.items.button_2.play();                               
+                this.resources.items.button_1_s.currentTime = 0;
+                this.resources.items.button_1_s.play();                               
                 this.timeline.to(e.position, {
                     x: 0,
                     y: 0,

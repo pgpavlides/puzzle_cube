@@ -47,4 +47,27 @@ export default [
         path: "/audio/Loading.mp3"
     },
     
+    {
+        name: "loading_s",
+        type: "audio",
+        path: "/audio/Loading_s.mp3"
+    },
+
+    {
+        name: "button_1_s",
+        type: "audio",
+        path: "/audio/Button_1_s.mp3"
+    },
+
+    {
+        name: "button_2_s",
+        type: "audio",
+        path: "/audio/Button_2_s.mp3"
+    },
+
+    {
+        name: "button_3_s",
+        type: "audio",
+        path: "/audio/Button_3_s.mp3"
+    },
 ];
