@@ -57,7 +57,7 @@ export default class Raycaster extends EventEmitter {
                 if(this.currentIntersect)
                 this.object = this.currentIntersect.object.name
                 {
-                    console.log(this.currentIntersect)
+                    // console.log(this.currentIntersect)
                     if(this.object === "pyramid_button") {
                         this.world.animations.firstStep();
                         // console.log("test")

@@ -3,54 +3,39 @@ import Experience from "../Experience.js";
 import { EventEmitter} from "events";
 import GSAP from "gsap"
 
-export default class Puzzle1 extends EventEmitter  {
+export default class Puzzle2 extends EventEmitter   {
     constructor() {
-        
+
         super();
-        
+               
         this.experience = new Experience();
         this.scene = this.experience.scene;
         this.sizes = this.experience.sizes;
         this.resources = this.experience.resources;   
         this.time = this.experience.time;
-        this.cube = this.experience.resources.items.cube
+        this.cube = this.experience.resources.items.cube;
+        this.puzzle1 = this.experience.world.puzzle1;
 
         this.p1lock = []
-        this.accessp1 = false;
+        this.accessp2 = false;
 
-        this.setAnimation();
+        console.log(this.experience.world.puzzle1)
+
+        this.puzzle1.on("puzzle1complete", ()=>{
+            
+        });
+
+            // console.log("PAME LIGOOOOOO")
+
+
+
+        // if(this.experience.world.puzzle1.accessp1 === true) {
+        // }
     
        
     }
-    
-    lockCheck(){
 
-        if (this.p1lock.length === 5){
-            if (this.p1lock[0] === 'red' && this.p1lock[1] === 'green' && this.p1lock[2] === 'blue' && this.p1lock[3] === 'yellow' && this.p1lock[4] === 'cross'){
-                
-                setTimeout(() => {
-                    this.accessp1 = true;
-                    this.resources.items.success.play(); 
-                    console.log("access granted")
-                    this.emit("puzzle1complete")
-                   }, 1000);
-                
-            } else {
-
-                setTimeout(() => {
-                    this.p1_resetAll();
-                    this.p1lock.length = 0 
-                    this.resources.items.error.play(); 
-                    console.log("access denied")
-                   }, 500);
-                
-            }
-            // console.log(this.p1lock)
-        }
-        
-    }
-
-    p1_resetAll(){
+    openSesame(){
         
         GSAP.to(this.cube.scene.children[0].children[6].position,{
             x: 0,
