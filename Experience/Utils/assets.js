@@ -40,5 +40,11 @@ export default [
         type: "audio",
         path: "/audio/Success_2.mp3"
     },
+
+    {
+        name: "loading",
+        type: "audio",
+        path: "/audio/Loading.mp3"
+    },
     
 ];

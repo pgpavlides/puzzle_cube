@@ -19,175 +19,42 @@ export default class Puzzle2 extends EventEmitter   {
         this.p1lock = []
         this.accessp2 = false;
 
-        console.log(this.experience.world.puzzle1)
+        this.object = this.cube.scene.children[0];
 
         this.puzzle1.on("puzzle1complete", ()=>{
-            
-        });
+            this.openSesame();
+            console.log("PAME LIGOOOOOO")
 
-            // console.log("PAME LIGOOOOOO")
+        });
+        
 
 
 
         // if(this.experience.world.puzzle1.accessp1 === true) {
         // }
-    
+        console.log(this.object)
        
     }
 
     openSesame(){
         
-        GSAP.to(this.cube.scene.children[0].children[6].position,{
-            x: 0,
-            y: 0,
-            z: 0,
-            delay: 0.15,
-            ease: "back.inout(2.5)",
-            duration: 0.5,
-        })
+        this.object.children.forEach((e) => {
 
-        GSAP.to(this.cube.scene.children[0].children[5].position,{
-            x: 0,
-            y: 0,
-            z: 0,
-            delay: 0.15,
-            ease: "back.inout(2.5)",
-            duration: 0.5,
-        })
-        GSAP.to(this.cube.scene.children[0].children[3].position,{
-            x: 0,
-            y: 0,
-            z: 0,
-            delay: 0.15,
-            ease: "back.inout(2.5)",
-            duration: 0.5,
-        })
-        GSAP.to(this.cube.scene.children[0].children[7].position,{
-            x: 0,
-            y: 0,
-            z: 0,
-            delay: 0.15,
-            ease: "back.inout(2.5)",
-            duration: 0.5,
-            
-        })
-        GSAP.to(this.cube.scene.children[0].children[4].position,{
-            x: 0,
-            y: 0,
-            z: 0,
-            delay: 0.15,
-            ease: "back.inout(2.5)",
-            duration: 0.5,
-        })
-    }
+            // console.log(e)
+            if (e.name === "puzzle2_door"){
+                // this.resources.items.button_1.currentTime = 0;
+                this.resources.items.loading.play();                               
+                GSAP.to(e.position, {
+                    x: 0,
+                    y: 0,
+                    z: -1.3,                 
+                    ease: "sine(2.5)",               
+                    duration: 4,                     
+                }) 
+            }                                                                
+          })
 
-    p1_Red(){
-        this.resources.items.button_1.currentTime = 0;
-        this.resources.items.button_1.play();  
-        GSAP.to(this.cube.scene.children[0].children[6].position,{
-            x: -0.03,
-            y: 0,
-            z: 0,
-            // delay: 0.5,
-            ease: "back.inout(2.5)",
-            duration: 0.25,
-            onComplete: () =>  {
-                             
-            } 
-        })
-        this.p1lock.push("red")
-        // console.log(this.p1lock)
-        // console.log(this.cube.scene.children[0]);
-        // this.cube.scene.children[0].children[6].scale.set(2,2,2)
-    }
-    
-    p1_Green(){
-        this.resources.items.button_2.currentTime = 0;        
-        this.resources.items.button_2.play(); 
-
-        GSAP.to(this.cube.scene.children[0].children[5].position,{
-            x: -0.03,
-            y: 0,
-            z: 0,
-            // delay: 0.5,
-            ease: "back.inout(2.5)",
-            duration: 0.25,
-            onComplete: () =>  {
-                            
-           }
-        })
-        this.p1lock.push("green")
-        // console.log(this.p1lock)
-
-        // console.log(this.cube.scene.children[0]);
-    }
-    
-    p1_Blue(){
-        this.resources.items.button_1.currentTime = 0;
-        this.resources.items.button_1.play(); 
-        GSAP.to(this.cube.scene.children[0].children[3].position,{
-            x: -0.03,
-            y: 0,
-            z: 0,
-            // delay: 0.5,
-            ease: "back.inout(2.5)",
-            duration: 0.25,
-            onComplete: () =>  {
-                             
-           }
-        })
-        this.p1lock.push("blue")
-        // console.log(this.p1lock)
-
-        // console.log(this.cube.scene.children[0]);
-    }
-    
-    p1_Yellow(){
-        this.resources.items.button_3.currentTime = 0;                                                
-        this.resources.items.button_3.play(); 
-        GSAP.to(this.cube.scene.children[0].children[7].position,{
-            x: -0.03,
-            y: 0,
-            z: 0,
-            // delay: 0.5,
-            ease: "back.inout(2.5)",
-            duration: 0.25,
-            onComplete: () =>  {
-                             
-           }
-            
-        })
-        this.p1lock.push("yellow")
-        // console.log(this.p1lock)
-
-        // console.log(this.cube.scene.children[0]);
-    }
-    p1_Cross(){
-        this.resources.items.button_2.currentTime = 0;
-        this.resources.items.button_2.play();  
-        GSAP.to(this.cube.scene.children[0].children[4].position,{
-            x: -0.03,
-            y: 0,
-            z: 0,
-            // delay: 0.5,
-            ease: "back.inout(2.5)",
-            duration: 0.25,
-            onComplete: () =>  {
-                            
-           }
-        })
-        this.p1lock.push("cross")
-        // console.log(this.p1lock)
-
-        // console.log(this.cube.scene.children[0]);
-    }
-
-
-    setAnimation(){
-        
-        // console.log(this.cube.scene.children[0].children)
-            
-    }        
+    }   
 
             
     
