@@ -86,7 +86,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -101,7 +101,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -115,7 +115,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -129,7 +129,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -143,7 +143,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -157,7 +157,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -171,7 +171,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -185,7 +185,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -199,7 +199,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -213,7 +213,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -227,7 +227,7 @@ export default class Puzzle2 extends EventEmitter   {
                     y: 0,
                     z: 0.05,                 
                     ease: "sine(2.5)",               
-                    duration: 1.90,                     
+                    duration: 1.3,                     
                 
               },"same");
                                
@@ -492,16 +492,16 @@ p2_closeDoor(){
     this.object.children.forEach((e) => {
 
         // console.log(e)
-        if (e.name === "puzzle2_door"){                               
-            GSAP.to(e.position, {
-                x: 0,
-                y: 0,
-                z: 0,
-                delay: 1.0,                 
-                ease: "expo.easeOut",                   
-                duration: 1.4,                     
-            }) 
-        }
+        // if (e.name === "puzzle2_door"){                               
+        //     GSAP.to(e.position, {
+        //         x: 0,
+        //         y: 0,
+        //         z: 0,
+        //         delay: 1.0,                 
+        //         ease: "expo.easeOut",                   
+        //         duration: 1.4,                     
+        //     }) 
+        // }
         if (e.name === "puzzle2_door2"){                               
             GSAP.to(e.position, {
                 x: 0,

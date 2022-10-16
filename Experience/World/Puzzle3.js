@@ -58,7 +58,9 @@ export default class Puzzle3 extends EventEmitter   {
                 
                 setTimeout(() => {
                     this.accessp3 = true;
-                    this.resources.items.success.play();                     
+                    this.resources.items.success.play();
+                    this.completeButtons();  
+                                       
                     // console.log("access granted")
                     this.emit("puzzle3complete")
                    }, 1000);
@@ -104,7 +106,20 @@ export default class Puzzle3 extends EventEmitter   {
               });                                                                        
           })
 
-    }  
+    }
+    
+    completeButtons(){        
+        this.object.children.forEach((e) => {                              
+                    this.timeline.to(e.position, {
+                    x: 0.32,
+                    y: 0,
+                    z: 0,                 
+                    ease: "sine(2.5)",               
+                    duration: 0.1,                                    
+              });                                                                        
+          })
+
+    }
 
     p3_p1(){
         this.object.children.forEach((e) => {
@@ -252,6 +267,6 @@ export default class Puzzle3 extends EventEmitter   {
     }               
 
     update(){       
-        console.log(this.p3lock)
+        // console.log(this.p3lock)
     }
 } 
