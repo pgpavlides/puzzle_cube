@@ -24,7 +24,9 @@ export default class Puzzle1 extends EventEmitter  {
 
         this.setAnimation();
 
-        this.object = this.cube.scene.children[0];
+        this.object = this.cube.scene.children[1];
+
+        // console.log(this.object)
     
        
     }

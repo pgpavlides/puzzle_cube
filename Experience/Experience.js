@@ -1,4 +1,4 @@
-import * as THREE from "three"
+import * as THREE from "three";
 
 import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
@@ -13,64 +13,58 @@ import Particles from "./Particles.js";
 import Animation from "./World/Animation.js";
 
 import Audioplayer from "./Audioplayer.js";
-import World from "./World/World.js"
+import World from "./World/World.js";
 
-
-export default class Experience{
-    static instance
-    constructor(canvas){
-        
-        if(Experience.instance){
-            return Experience.instance
-        }
-
-        Experience.instance = this
-        this.canvas = canvas;
-        this.scene = new THREE.Scene();
-        this.scene.background = new THREE.Color(0x4F0000)
-        this.time = new Time();
-        this.sizes = new Sizes();
-        this.camera = new Camera();
-        this.renderer = new Renderer();
-        this.resources = new Resources(assets);
-        // this.animation = new Animation();
-        
-        this.world = new World();
-        this.particles = new Particles();
-        this.preloader = new Preloader();
-        this.raycaster = new Raycaster();
-        this.audioplayer = new Audioplayer();
-
-        this.preloader.on('enablecontrols', ()=>{
-            this.controls = new Controls();
-        })
-
-        this.sizes.on("resize", ()=>{
-            this.resize();
-        });
-        
-        this.time.on("update", ()=>{
-            this.update();
-        });
-        
-        
-
+export default class Experience {
+  static instance;
+  constructor(canvas) {
+    if (Experience.instance) {
+      return Experience.instance;
     }
 
-    resize(){
-        this.camera.resizeCamera();
-        this.world.resize();
-        this.renderer.resize();
-    }
+    Experience.instance = this;
+    this.canvas = canvas;
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0x4f0000);
+    this.time = new Time();
+    this.sizes = new Sizes();
+    this.camera = new Camera();
+    this.renderer = new Renderer();
+    this.resources = new Resources(assets);
+    // this.animation = new Animation();
 
-    update(){
-        // this.room.update();
-        this.camera.update();
-        this.world.update();
-        this.renderer.update();
-        this.preloader.update();
-        this.raycaster.update();
-        // this.animation.update();
-    }
-   
+    this.world = new World();
+    this.particles = new Particles();
+    this.preloader = new Preloader();
+    this.raycaster = new Raycaster();
+    this.audioplayer = new Audioplayer();
+
+    this.preloader.on("enablecontrols", () => {
+      this.controls = new Controls();
+    });
+
+    this.sizes.on("resize", () => {
+      this.resize();
+    });
+
+    this.time.on("update", () => {
+      this.update();
+    });
+  }
+
+  resize() {
+    this.camera.resizeCamera();
+    this.world.resize();
+    this.renderer.resize();
+  }
+
+  update() {
+    // this.room.update();
+    this.camera.update();
+    this.world.update();
+    this.renderer.update();
+    this.preloader.update();
+    this.raycaster.update();
+    // this.animation.update();
+  }
 }

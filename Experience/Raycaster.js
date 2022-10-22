@@ -196,7 +196,7 @@ export default class Raycaster extends EventEmitter {
                     if(this.object === "puzzle4_b1") {
                         this.world.puzzle4.p4_p1();
                         this.world.puzzle4.lockCheck(); 
-                        console.log("reach") 
+                        // console.log("reach") 
                     }
                     //--------Puzzle_4_b2
                     if(this.object === "puzzle4_b2") {

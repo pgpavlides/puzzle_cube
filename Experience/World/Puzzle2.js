@@ -19,7 +19,7 @@ export default class Puzzle2 extends EventEmitter   {
         this.p2lock = []
         this.accessp2 = false;
 
-        this.object = this.cube.scene.children[0];
+        this.object = this.cube.scene.children[1];
 
         this.puzzle1.on("puzzle1complete", ()=>{
             this.openSesame();
