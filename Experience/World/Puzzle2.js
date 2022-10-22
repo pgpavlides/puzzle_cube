@@ -38,8 +38,35 @@ export default class Puzzle2 extends EventEmitter   {
 
         // if(this.experience.world.puzzle1.accessp1 === true) {
         // }
-        // console.log(this.object)
+        console.log(this.object)
        
+    }
+
+    lockCountCheck() {
+        this.colorcheck = new THREE.MeshStandardMaterial()
+        this.greencolor = new THREE.Color("rgb(0, 255, 0)");
+        this.colorcheck.color= this.greencolor 
+        
+            
+            if(this.p2lock.length >= 1) {
+                this.object.children[5].material = this.colorcheck
+            }
+            if(this.p2lock.length >= 2) {
+                this.object.children[7].material = this.colorcheck 
+            }
+            if(this.p2lock.length >= 3) {
+                this.object.children[6].material = this.colorcheck
+            }
+        
+    }
+
+    lockResetColor () {
+        this.colorcheck = new THREE.MeshStandardMaterial()        
+        this.colorcheck.color = new THREE.Color("rgb(255, 0, 0)");
+        
+        this.object.children[5].material = this.colorcheck
+        this.object.children[7].material = this.colorcheck
+        this.object.children[6].material = this.colorcheck
     }
 
     lockCheck(){
@@ -63,12 +90,16 @@ export default class Puzzle2 extends EventEmitter   {
                 setTimeout(() => {
                     this.p2lock.length = 0 
                     this.resources.items.error.play(); 
+                    this.lockResetColor();
                     // console.log("access denied")
                    }, 250);
                 
             }
             // console.log(this.p1lock)
+            
         }
+
+        this.lockCountCheck();
         
     }
 
@@ -85,6 +116,50 @@ export default class Puzzle2 extends EventEmitter   {
                     x: 0,
                     y: 0,
                     z: 0.05,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.3,                     
+                
+              },"same");
+                               
+            }
+
+            if (e.name === "puzzle2_passcheck1" && this.accessp2 === false){
+                console.log(e)
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    // this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: -0.3,
+                    y: 0.3,
+                    z: 0,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.3,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_passcheck2" && this.accessp2 === false){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    // this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0.3,
+                    y: 0.3,
+                    z: 0,                 
+                    ease: "sine(2.5)",               
+                    duration: 1.3,                     
+                
+              },"same");
+                               
+            }
+            if (e.name === "puzzle2_passcheck3" && this.accessp2 === false){
+                // this.resources.items.button_1.currentTime = 0;
+                
+                    // this.resources.items.loading.play();                               
+                    this.timeline.to(e.position, {
+                    x: 0,
+                    y: 0.3,
+                    z: 0,                 
                     ease: "sine(2.5)",               
                     duration: 1.3,                     
                 
