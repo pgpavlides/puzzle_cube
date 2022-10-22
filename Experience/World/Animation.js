@@ -12,7 +12,8 @@ export default class Animation  {
         this.experience = new Experience();
         this.scene = this.experience.scene;
         this.sizes = this.experience.sizes;
-        this.resources = this.experience.resources;   
+        this.resources = this.experience.resources;  
+        this.camera = this.experience.camera.perpectiveCamera; 
         
         this.cube = this.experience.resources.items.cube
        
@@ -27,7 +28,8 @@ export default class Animation  {
         // this.actions.idle = this.animation.mixer.clipAction(this.cube.animations[0])
        
         // this.firstStep();
-        this.setAnimation();
+        
+        
     //    this.p1_Red();
        
         
@@ -69,6 +71,7 @@ export default class Animation  {
         this.action3.play();
         this.action4.play();
         this.action5.play();
+        this.setAnimation();
         // this.arm1 = this.mixer.clipAction(this.room.animations[1]);
         // this.arm2 = this.mixer.clipAction(this.room.animations[2]);
         // this.arm3 = this.mixer.clipAction(this.room.animations[3]);
@@ -87,6 +90,38 @@ export default class Animation  {
 
 
     setAnimation(){
+        
+        console.log(this.camera)
+        this.timeline = new GSAP.timeline();
+        
+        this.timeline.to(this.camera.position, {
+            x: 1,
+            y: 1,
+            z: 1,                 
+            ease: "sine(2.5)",               
+            duration: 3,                     
+        
+        });
+        this.timeline.to(this.camera.position, {
+            x: 0.2,
+            y: 0.8,
+            z: -1,                 
+            ease: "cir(2.5)",               
+            duration: 4,                     
+        
+        },"same");
+        this.timeline.to(this.camera.position, {
+            x: 0.7,
+            y: 0.8,
+            z: -1,                 
+            ease: "cir(2.5)",               
+            duration: 4,                     
+        
+        },"same");
+        
+
+        
+        
         
         
             
