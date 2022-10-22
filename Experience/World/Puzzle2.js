@@ -38,7 +38,7 @@ export default class Puzzle2 extends EventEmitter   {
 
         // if(this.experience.world.puzzle1.accessp1 === true) {
         // }
-        console.log(this.object)
+        // console.log(this.object)
        
     }
 
@@ -124,7 +124,7 @@ export default class Puzzle2 extends EventEmitter   {
             }
 
             if (e.name === "puzzle2_passcheck1" && this.accessp2 === false){
-                console.log(e)
+                // console.log(e)
                 // this.resources.items.button_1.currentTime = 0;
                 
                     // this.resources.items.loading.play();                               
@@ -350,7 +350,10 @@ export default class Puzzle2 extends EventEmitter   {
                 })                
             }                                                                
           }) 
-          this.p2lock.push(0)           
+          
+            this.p2lock.push(0) 
+          
+                    
     } 
 
     p2_p1(){
@@ -566,17 +569,36 @@ p2_closeDoor(){
         
     this.object.children.forEach((e) => {
 
-        // console.log(e)
-        // if (e.name === "puzzle2_door"){                               
-        //     GSAP.to(e.position, {
-        //         x: 0,
-        //         y: 0,
-        //         z: 0,
-        //         delay: 1.0,                 
-        //         ease: "expo.easeOut",                   
-        //         duration: 1.4,                     
-        //     }) 
-        // }
+        if (e.name === "puzzle2_passcheck1"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
+        if (e.name === "puzzle2_passcheck2"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
+        if (e.name === "puzzle2_passcheck3"){                               
+            GSAP.to(e.position, {
+                x: 0,
+                y: 0,
+                z: -1,
+                delay: 0.15,                 
+                ease: "expo.easeOut",                   
+                duration: 3,                     
+            }) 
+        }
         if (e.name === "puzzle2_door2"){                               
             GSAP.to(e.position, {
                 x: 0,
