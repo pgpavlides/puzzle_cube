@@ -17,6 +17,10 @@ export default class Puzzle1 extends EventEmitter  {
 
         this.p1lock = []
         this.accessp1 = false;
+        this.p1red = false;
+        this.p1green = false;
+        this.p1blue = false;
+        this.p1yellow = false;
 
         this.setAnimation();
 
@@ -27,8 +31,8 @@ export default class Puzzle1 extends EventEmitter  {
     
     lockCheck(){
 
-        if (this.p1lock.length === 5){
-            if (this.p1lock[0] === 'red' && this.p1lock[1] === 'green' && this.p1lock[2] === 'blue' && this.p1lock[3] === 'yellow' && this.p1lock[4] === 'cross'){
+        if (this.p1lock.length === 4){
+            if (this.p1lock[0] === 'red' && this.p1lock[1] === 'green' && this.p1lock[2] === 'blue' && this.p1lock[3] === 'yellow'){
                 
                 setTimeout(() => {
                     this.accessp1 = true;
@@ -44,7 +48,7 @@ export default class Puzzle1 extends EventEmitter  {
                     this.p1lock.length = 0 
                     this.resources.items.error.play(); 
                     // console.log("access denied")
-                   }, 500);
+                   }, 50);
                 
             }
             // console.log(this.p1lock)
@@ -57,56 +61,60 @@ export default class Puzzle1 extends EventEmitter  {
         this.object.children.forEach((e) => {
 
             // console.log(e)
-            if (e.name === "puzzle_1_red_b"){                               
+            if (e.name === "puzzle_1_red_b"){  
+                this.p1red = false;                            
                 GSAP.to(e.position, {
                     x: 0,
                     y: 0,
                     z: 0,
                     delay: 0.15,                 
                     ease: "expo.easeOut",                   
-                    duration: 0.9,                     
+                    duration: 0.2,                     
                 }) 
             } 
-            if (e.name === "puzzle_1_green_b"){                               
+            if (e.name === "puzzle_1_green_b"){   
+                this.p1green = false;                            
                 GSAP.to(e.position, {
                     x: 0,
                     y: 0,
                     z: 0,
                     delay: 0.15,                 
                     ease: "expo.easeOut",                   
-                    duration: 0.9,                     
+                    duration: 0.2,                     
                 }) 
             }
-            if (e.name === "puzzle_1_blue_b"){                               
+            if (e.name === "puzzle_1_blue_b"){   
+                this.p1blue = false;                            
                 GSAP.to(e.position, {
                     x: 0,
                     y: 0,
                     z: 0,
                     delay: 0.15,                 
                     ease: "expo.easeOut",                   
-                    duration: 0.9,                     
+                    duration: 0.2,                     
                 }) 
             }
-            if (e.name === "puzzle_1_yellow_b"){                               
+            if (e.name === "puzzle_1_yellow_b"){ 
+                this.p1yellow = false;                              
                 GSAP.to(e.position, {
                     x: 0,
                     y: 0,
                     z: 0,
                     delay: 0.15,                 
                     ease: "expo.easeOut",                   
-                    duration: 0.9,                     
+                    duration: 0.2,                     
                 }) 
             } 
-            if (e.name === "puzzle_1_cross"){                               
-                GSAP.to(e.position, {
-                    x: 0,
-                    y: 0,
-                    z: 0,
-                    delay: 0.15,                 
-                    ease: "expo.easeOut",                   
-                    duration: 0.9,                     
-                }) 
-            }            
+            // if (e.name === "puzzle_1_cross"){                               
+            //     GSAP.to(e.position, {
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //         delay: 0.15,                 
+            //         ease: "expo.easeOut",                   
+            //         duration: 0.9,                     
+            //     }) 
+            // }            
           })     
     }
 
@@ -115,9 +123,10 @@ export default class Puzzle1 extends EventEmitter  {
             this.object.children.forEach((e) => {
 
                 // console.log(e)
-                if (e.name === "puzzle_1_red_b" && this.accessp1 === false){
+                if (e.name === "puzzle_1_red_b" && this.p1red === false){
                     this.resources.items.button_2.currentTime = 0;
-                    this.resources.items.button_2.play();                               
+                    this.resources.items.button_2.play();  
+                                                
                     GSAP.to(e.position, {
                         x: -0.03,
                         y: 0,
@@ -127,16 +136,20 @@ export default class Puzzle1 extends EventEmitter  {
                     }) 
                 }                                                                
               })
-              this.p1lock.push("red")                
+              if(this.p1red === false){
+                this.p1red = true;
+                this.p1lock.push("red")
+              }
+                              
     }
     
     p1_Green(){
             this.object.children.forEach((e) => {
 
                 // console.log(e)
-                if (e.name === "puzzle_1_green_b" && this.accessp1 === false){
+                if (e.name === "puzzle_1_green_b" && this.p1green === false){
                     this.resources.items.button_1.currentTime = 0;
-                    this.resources.items.button_1.play();                               
+                    this.resources.items.button_1.play(); 
                     GSAP.to(e.position, {
                         x: -0.03,
                         y: 0,
@@ -146,7 +159,10 @@ export default class Puzzle1 extends EventEmitter  {
                     }) 
                 }                                                                
               })
-              this.p1lock.push("green")
+              if(this.p1green === false){
+                this.p1green = true
+                this.p1lock.push("green")
+              }
         
         
     }
@@ -154,9 +170,9 @@ export default class Puzzle1 extends EventEmitter  {
     p1_Blue(){
             this.object.children.forEach((e) => {
 
-                if (e.name === "puzzle_1_blue_b" && this.accessp1 === false){
+                if (e.name === "puzzle_1_blue_b" && this.p1blue === false){
                     this.resources.items.button_2.currentTime = 0;
-                    this.resources.items.button_2.play();                               
+                    this.resources.items.button_2.play();
                     GSAP.to(e.position, {
                         x: -0.03,
                         y: 0,
@@ -166,7 +182,11 @@ export default class Puzzle1 extends EventEmitter  {
                     }) 
                 }                                                                
               })
+              if(this.p1blue === false){
+                this.p1blue = true;
               this.p1lock.push("blue") 
+
+              }
         
         
     }
@@ -175,9 +195,10 @@ export default class Puzzle1 extends EventEmitter  {
             this.object.children.forEach((e) => {
 
                 // console.log(e)
-                if (e.name === "puzzle_1_yellow_b" && this.accessp1 === false){
+                if (e.name === "puzzle_1_yellow_b" && this.p1yellow === false){
                     this.resources.items.button_3.currentTime = 0;
-                    this.resources.items.button_3.play();                               
+                    this.resources.items.button_3.play();  
+                                                 
                     GSAP.to(e.position, {
                         x: -0.03,
                         y: 0,
@@ -187,28 +208,10 @@ export default class Puzzle1 extends EventEmitter  {
                     }) 
                 }                                                                
               })
-              this.p1lock.push("yellow")
-        
-        
-    }
-    p1_Cross(){
-        
-            this.object.children.forEach((e) => {
-
-                // console.log(e)
-                if (e.name === "puzzle_1_cross" && this.accessp1 === false){
-                    this.resources.items.button_2.currentTime = 0;
-                    this.resources.items.button_2.play();                               
-                    GSAP.to(e.position, {
-                        x: -0.03,
-                        y: 0,
-                        z: 0,                 
-                        ease: "back.inout(2.5)",               
-                        duration: 0.25,                     
-                    }) 
-                }                                                                
-              })
-              this.p1lock.push("cross")  
+              if(this.p1yellow === false){
+                this.p1yellow = true;
+                this.p1lock.push("yellow")
+              }
         
         
     }
@@ -226,7 +229,7 @@ export default class Puzzle1 extends EventEmitter  {
     update(){
         
         // console.log(this.access)
-        // console.log(this.p1lock.length)
+        // console.log(this.p1lock)
         // console.log(this.access)
         
          //else if (this.p1lock.length > 5) {

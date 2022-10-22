@@ -90,12 +90,12 @@ export default class Raycaster extends EventEmitter {
                     }
 
                     //--------Cross
-                    if(this.object === "puzzle_1_cross") {
-                        this.world.puzzle1.p1_Cross();
-                        this.world.puzzle1.lockCheck();
+                    // if(this.object === "puzzle_1_cross") {
+                    //     this.world.puzzle1.p1_Cross();
+                    //     this.world.puzzle1.lockCheck();
                         
 
-                    }
+                    // }
 
                     //--------Phone 0
                     if(this.object === "Cube022_1") {
