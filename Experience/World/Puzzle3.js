@@ -29,6 +29,7 @@ export default class Puzzle3 extends EventEmitter {
     this.b9 = false;
 
     this.object = this.cube.scene.children[1].children[19].children;
+    this.object2 = this.cube.scene.children[1].children
 
     this.puzzle2.on("puzzle2complete", () => {
       setTimeout(() => {
@@ -42,6 +43,8 @@ export default class Puzzle3 extends EventEmitter {
     // console.log(this.object)
 
     this.timeline = new GSAP.timeline();
+
+    
 
     // if(this.experience.world.puzzle1.accessp1 === true) {
     // }
@@ -63,6 +66,19 @@ export default class Puzzle3 extends EventEmitter {
           this.accessp3 = true;
           this.resources.items.success.play();
           this.completeButtons();
+          this.object2.forEach((e) => {
+            if (e.name === "puzzle5_topdoor_lock_3"){  
+                                           
+                GSAP.to(e.position, {
+                    x: 0,
+                    y: -0.13,
+                    z: 0,
+                    delay: 0.15,                 
+                    ease: "expo.easeOut",                   
+                    duration: 2,                     
+                }) 
+            } 
+        })
 
           // console.log("access granted")
           this.emit("puzzle3complete");

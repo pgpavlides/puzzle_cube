@@ -39,6 +39,19 @@ export default class Puzzle1 extends EventEmitter  {
                 setTimeout(() => {
                     this.accessp1 = true;
                     this.resources.items.success.play(); 
+                    this.object.children.forEach((e) => {
+                        if (e.name === "puzzle5_topdoor_lock_1"){  
+                                                        
+                            GSAP.to(e.position, {
+                                x: 0,
+                                y: -0.13,
+                                z: 0,
+                                delay: 0.15,                 
+                                ease: "expo.easeOut",                   
+                                duration: 2,                     
+                            }) 
+                        } 
+                    })
                     // console.log("access granted")
                     this.emit("puzzle1complete")
                    }, 1000);

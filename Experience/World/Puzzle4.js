@@ -16,13 +16,16 @@ export default class Puzzle4 extends EventEmitter {
     this.puzzle3 = this.experience.world.puzzle3;
 
     this.p4lock = [];
-    this.accessp4 = false;
+    this.accessp4 = true;
 
-    this.object = this.cube.scene.children[1].children[20];
+    this.object = this.cube.scene.children[1].children[20].children;
+    this.object2 = this.cube.scene.children[1].children
 
     this.puzzle3.on("puzzle3complete", () => {
       setTimeout(() => {
         this.openSesame();
+        this.accessp4 = false;
+        
         this.resources.items.loading.play();
       }, 1700);
 
@@ -39,19 +42,32 @@ export default class Puzzle4 extends EventEmitter {
   }
 
   lockCheck() {
-    if (this.p4lock.length === 15) {
-      if (this.p4lock[0] === "red") {
+    if (this.p4lock.length === 20) {
+      if (this.p4lock[19] === 5) {
         setTimeout(() => {
           this.accessp4 = true;
           this.resources.items.success.play();
-          this.completeButtons();
+          // this.completeButtons();
+          this.object2.forEach((e) => {
+            if (e.name === "puzzle5_topdoor_lock_4"){  
+                                           
+                GSAP.to(e.position, {
+                    x: 0,
+                    y: -0.13,
+                    z: 0,
+                    delay: 0.15,                 
+                    ease: "expo.easeOut",                   
+                    duration: 2,                     
+                }) 
+            } 
+        })
           this.emit("puzzle4complete");
         }, 1000);
       } else {
         setTimeout(() => {
           this.p4lock.length = 0;
           this.resources.items.error.play();
-          this.resetButtons();
+          // this.resetButtons();
 
           // console.log("access denied")
         }, 150);
@@ -61,7 +77,7 @@ export default class Puzzle4 extends EventEmitter {
   }
 
   openSesame() {
-    this.object.children.forEach((e) => {
+    this.object.forEach((e) => {
       this.timeline.to(
         e.position,
         {
@@ -77,7 +93,7 @@ export default class Puzzle4 extends EventEmitter {
   }
 
   resetButtons() {
-    this.object.children.forEach((e) => {
+    this.object.forEach((e) => {
       this.timeline.to(e.position, {
         x: -0.01,
         y: 0,
@@ -89,7 +105,7 @@ export default class Puzzle4 extends EventEmitter {
   }
 
   completeButtons() {
-    this.object.children.forEach((e) => {
+    this.object.forEach((e) => {
       this.timeline.to(e.position, {
         x: 0,
         y: 0,
@@ -101,9 +117,9 @@ export default class Puzzle4 extends EventEmitter {
   }
 
   p4_p1() {
-    this.object.children.forEach((e) => {
+    this.object.forEach((e) => {
       // console.log(e)
-      if (e.name === "puzzle4_b1" && this.accessp4 === false) {
+      if (e.name === "puzzle4_door_button" && this.accessp4 === false) {
         this.resources.items.button_3_s.currentTime = 0;
         this.resources.items.button_3_s.play();
         this.timeline.to(e.position, {
@@ -113,9 +129,16 @@ export default class Puzzle4 extends EventEmitter {
           ease: "back.inout(2.5)",
           duration: 0.1,
         });
+        this.timeline.to(e.position, {
+          x: 0,
+          y: 0,
+          z: 0,
+          ease: "back.inout(2.5)",
+          duration: 0.1,
+        });
       }
     });
-    this.p4lock.push("red");
+    this.p4lock.push(5);
   }
   
 

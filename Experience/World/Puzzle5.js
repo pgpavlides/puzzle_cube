@@ -20,17 +20,23 @@ export default class Puzzle5 extends EventEmitter {
     this.accessp5 = false;
 
     this.object = this.cube.scene.children[0];
+    this.object2 = this.cube.scene.children[1].children;
+
 
     this.puzzle4.on("puzzle4complete", () => {
       setTimeout(() => {
         this.openSesame();
         this.resources.items.loading.play();
-      }, 1700);
+      }, 15000);
+      setTimeout(() => {
+        this.openSesame2();
+        // this.resources.items.loading.play();
+      }, 300);
 
       // console.log("PAME LIGOOOOOO")
     });
 
-    // console.log(this.object)
+    // console.log(this.cube.scene.children[1].children[21])
 
     this.timeline = new GSAP.timeline();
 
@@ -62,14 +68,31 @@ export default class Puzzle5 extends EventEmitter {
   }
 
   openSesame() {
-    console.log(this.object.children);
+    // console.log(this.object.children);
+    this.object2.forEach((e) => {
+      // console.log(e)
+      if (e.name === "puzzle5_body"){
+        this.timeline.to(e.position, {
+          x: 0,
+          y: 0.2,
+          z: 0,
+          ease: "back.out(1.7)",
+          duration: 1,
+        }); 
+      }
+      
+    });
+  }
+
+  openSesame2() {
+    // console.log(this.object.children);
     this.object.children.forEach((e) => {
       this.timeline.to(e.position, {
         x: -0.01,
         y: 0,
         z: 0,
-        ease: "sine(2.5)",
-        duration: 0.7,
+        ease: "back.out(1.7)",
+        duration: 0.2,
       });
     });
   }

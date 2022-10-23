@@ -48,7 +48,7 @@ export default class Raycaster extends EventEmitter {
   }
 
   onPointerClick() {
-    console.log(this.device);
+    // console.log(this.device);
     if (this.device === "desktop") {
       window.addEventListener("click", () => {
         this.timeline = new GSAP.timeline();
@@ -192,7 +192,7 @@ export default class Raycaster extends EventEmitter {
 
         if (this.currentIntersect)
           this.object = this.currentIntersect.object.name;
-        console.log(this.currentIntersect)
+        // console.log(this.currentIntersect)
 
         {
           // console.log(this.currentIntersect)
@@ -317,6 +317,10 @@ export default class Raycaster extends EventEmitter {
           if (this.object === "puzzle3_b9a") {
             this.world.puzzle3.p3_p9();
             this.world.puzzle3.lockCheck();
+          }
+          if (this.object === "puzzle4_door_button") {
+            this.world.puzzle4.p4_p1();
+            this.world.puzzle4.lockCheck();
           }
         }
       });
