@@ -11,6 +11,7 @@ export default class Room {
         this.scene = this.experience.scene;
         this.resources = this.experience.resources;
         this.cube = this.resources.items.cube.scene;
+        this.raycaster = this.experience.raycaster;
 
         this.text1 = document.querySelector(".introtext");
         this.text2 = document.querySelector(".introtext2");
@@ -20,6 +21,7 @@ export default class Room {
 
         this.setModel();
         // this.setFirststep();
+        // console.log(this.raycaster)
                 
     }
 
@@ -70,7 +72,8 @@ export default class Room {
             delay: 1,
             opacity: 1,
             ease: "Sine.easeInOut",
-            duration: 1,  
+            duration: 1, 
+            // onComplete: console.log(this.raycaster.currentIntersect)
             
         },"same")
 

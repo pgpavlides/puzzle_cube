@@ -91,7 +91,7 @@ export default class Animation  {
 
     setAnimation(){
         
-        console.log(this.camera)
+        // console.log(this.camera)
         this.timeline = new GSAP.timeline();
         
         this.timeline.to(this.camera.position, {
