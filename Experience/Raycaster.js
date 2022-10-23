@@ -181,6 +181,10 @@ export default class Raycaster extends EventEmitter {
             this.world.puzzle3.p3_p9();
             this.world.puzzle3.lockCheck();
           }
+          if (this.object === "puzzle4_door_button") {
+            this.world.puzzle4.p4_p1();
+            this.world.puzzle4.lockCheck();
+          }
         }
       });
     } else if (this.device === "mobile") {
